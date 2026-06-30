@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JoJo's Bizarre Adventure</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#1a1a1a,#3b0a45,#000);
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    text-align:center;
+    padding:40px;
+    background:rgba(0,0,0,.4);
+    backdrop-filter:blur(10px);
+}
+
+header h1{
+    font-size:60px;
+    color:#FFD700;
+    text-shadow:0 0 20px gold;
+}
+
+header p{
+    margin-top:15px;
+    color:#ddd;
+    font-size:20px;
+}
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:70vh;
+    flex-direction:column;
+}
+
+.stand{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:radial-gradient(circle,#FFD700,#8B0000,#000);
+    animation:girar 8s linear infinite;
+    box-shadow:0 0 50px gold;
+}
+
+@keyframes girar{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.hero h2{
+    margin-top:30px;
+    font-size:40px;
+    color:#FFD700;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:20px;
+    background:#FFD700;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#fff;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:50px;
+}
+
+.card{
+    width:280px;
+    background:#222;
+    border:2px solid gold;
+    border-radius:15px;
+    padding:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px gold;
+}
+
+.card h3{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:#bbb;
+}
+
+#ora{
+    font-size:32px;
+    color:gold;
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>JOJO'S BIZARRE ADVENTURE</h1>
+<p>ゴゴゴゴゴゴゴゴ</p>
+</header>
+
+<section class="hero">
+
+<div class="stand"></div>
+
+<h2>Golden Wind</h2>
+
+<div id="ora"></div>
+
+<button onclick="ora()">Invocar Stand</button>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h3>⭐ Stand</h3>
+<p>Manifestação espiritual do usuário, capaz de realizar habilidades extraordinárias.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Golden Experience</h3>
+<p>Stand capaz de criar vida a partir de objetos inanimados.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Requiem</h3>
+<p>Uma evolução extremamente poderosa que transcende as regras normais dos Stands.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Muda vs Ora</h3>
+<p>A lendária rivalidade entre DIO e Jotaro marcou a história do anime.</p>
+</div>
+
+</section>
+
+<footer>
+Feito com o espírito de JoJo's Bizarre Adventure ✨
+</footer>
+
+<script>
+
+function ora(){
+
+    let texto="";
+
+    for(let i=0;i<20;i++){
+        texto+="ORA ";
+    }
+
+    document.getElementById("ora").innerHTML=texto;
+
+    document.body.animate([
+        {transform:"translateX(-5px)"},
+        {transform:"translateX(5px)"},
+        {transform:"translateX(-5px)"},
+        {transform:"translateX(0px)"}
+    ],{
+        duration:300
+    });
+
+}
+
+</script>
+
+</body>
+</html>
